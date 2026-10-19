@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Pattern</title>
+<link rel="icon" type="image/png" href="../assets/market_info.png">
+<link rel="stylesheet" href="../assets/kb_style.css">
+<script src="../kb_config.js"></script>
+<script src="../assets/kb_common.js"></script>
+</head>
+<body>
+<a class="return-arrow" href="../index.html" title="Back to Market Info" aria-label="Back to Market Info"><img src="../assets/return_arrow.svg" alt=""></a>
+<div class="page">
+
+  <header>
+    <h1>Market Pattern</h1>
+    <p>General market patterns: microstructure, intraday rhythms, sessions and calendar, intermarket, and technical formations (EDT).</p>
+  </header>
+
+  <nav class="section-nav" aria-label="Page sections">
+    <a href="#microstructure">Microstructure</a>
+    <a href="#intraday">Intraday Rhythms</a>
+    <a href="#time">Time &amp; Sessions</a>
+    <a href="#intermarket">Intermarket</a>
+    <a href="#formations">Technical Formations</a>
+  </nav>
+
+  <p class="intro">Comprehensive catalog of recurring market behaviors across microstructure, intraday rhythm, time/session, intermarket, and structural formations. All clock references in UTC-4 (New York, EDT). RTH = regular trading hours, 09:30–16:00. Click a box to open it.</p>
+
+  <h2 id="microstructure">Market Microstructure Patterns</h2>
+  <div class="rows">
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Order Flow Dynamics</h3><span class="origin"><span class="label">Topics</span><span class="value">Absorption · Exhaustion · Icebergs · Stop runs · Delta · Imbalance · Spoofing · Vacuum</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Absorption</dt><dd>large passive limit orders soak up aggressive flow without price moving; often precedes reversal</dd>
+          <dt>Exhaustion</dt><dd>surge of aggressive volume that fails to extend price; one side depleted</dd>
+          <dt>Iceberg orders</dt><dd>hidden size that repeatedly refills a level, creating stubborn support/resistance</dd>
+          <dt>Stop runs / liquidity sweeps</dt><dd>price spikes through a stop cluster, then reverses (stop-hunt)</dd>
+          <dt>Cumulative delta divergence</dt><dd>volume delta diverges from price, signaling weak drive</dd>
+          <dt>Order-book imbalance</dt><dd>persistent bid/ask size skew predicting near-term direction</dd>
+          <dt>Spoofing / layering footprints</dt><dd>large flickering orders pulled before execution</dd>
+          <dt>Liquidity vacuum / thin book</dt><dd>price gaps between levels when resting depth disappears</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Liquidity Shifts</h3><span class="origin"><span class="label">Topics</span><span class="value">Intraday curve · News pull · Futures roll · Rebalancing</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Intraday liquidity curve</dt><dd>deep at open and close, thin midday</dd>
+          <dt>News-event liquidity pull</dt><dd>depth withdrawn and spreads widen around scheduled releases</dd>
+          <dt>Futures roll</dt><dd>liquidity migrates between contract months near expiry</dd>
+          <dt>Month/quarter-end rebalancing</dt><dd>concentrated flow around index and fund rebalance windows</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Algorithmic Execution Windows</h3><span class="origin"><span class="label">Topics</span><span class="value">VWAP/TWAP · MOC/LOC · Index rebalance · Dealer hedging</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>VWAP/TWAP execution</dt><dd>institutional algos work orders through the day; price mean-reverts toward VWAP</dd>
+          <dt>Opening/closing auction imbalance (MOC/LOC)</dt><dd>published imbalance drives late-day drift into the close</dd>
+          <dt>Index rebalance flows</dt><dd>scheduled passive buy/sell on reconstitution dates</dd>
+          <dt>Dealer hedging flows</dt><dd>delta-hedging concentrates activity near large open-interest strikes</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Market Maker / Dealer Positioning</h3><span class="origin"><span class="label">Topics</span><span class="value">Gamma · Pinning / max pain · Charm &amp; vanna</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Gamma positioning</dt><dd>positive dealer gamma dampens vol (pinning); negative gamma amplifies moves</dd>
+          <dt>Strike pinning / max pain</dt><dd>price gravitates to high open-interest strikes into expiry (acute for 0DTE SPY/SPX)</dd>
+          <dt>Charm &amp; vanna flows</dt><dd>predictable hedging drift into expiration and month-end</dd>
+        </dl>
+      </div>
+    </article>
+
+  </div>
+
+  <h2 id="intraday">Intraday Anomalies / Recurring Behavioral Rhythms</h2>
+  <div class="rows">
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Intraday Rhythms</h3><span class="origin"><span class="label">Topics</span><span class="value">ORB · Opening drive · IB extension · Lunch reversal · 3 PM turn · Power hour · Gaps · Magnets</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Opening range (ORB)</dt><dd>first 5/15/30/60 min sets initial balance; range breakouts are tradable</dd>
+          <dt>Opening drive vs. opening reversal</dt><dd>immediate continuation off the open vs. fade of the open</dd>
+          <dt>Initial-balance extension</dt><dd>breaking the first-hour range signals a developing trend day</dd>
+          <dt>~90% of daily highs/lows in first ~90 minutes</dt><dd>early session sets the extremes</dd>
+          <dt>Midday / lunchtime reversal</dt><dd>low-liquidity chop and mean reversion 11:30–13:30</dd>
+          <dt>Afternoon trend resumption</dt><dd>second directional leg after the midday lull</dd>
+          <dt>3:00 PM turn</dt><dd>frequent pivot as positioning shifts into the last hour</dd>
+          <dt>Power hour (15:00–16:00)</dt><dd>trend acceleration plus MOC imbalance drift</dd>
+          <dt>Closing-imbalance drift</dt><dd>last 10–30 min pulled by auction order flow</dd>
+          <dt>Gap behavior</dt><dd>partial gap fill (~48% same day); unfilled gap after first hour flags trend day</dd>
+          <dt>Reference-level magnets</dt><dd>prior-day high/low/close and overnight high/low act as intraday pivots</dd>
+        </dl>
+      </div>
+    </article>
+
+  </div>
+
+  <h2 id="time">Time-Based Anomalies / Session Profiles</h2>
+  <div class="rows">
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Intraday Session Map (EDT)</h3><span class="origin"><span class="label">Topics</span><span class="value">09:30 open · 10:00 data · Lunch lull · 14:00 FOMC · Power hour · Close</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>09:30</dt><dd>cash open; peak volatility and volume</dd>
+          <dt>09:30–10:30</dt><dd>opening range / initial balance</dd>
+          <dt>10:00</dt><dd>common economic-data release; frequent inflection</dd>
+          <dt>11:30–13:30</dt><dd>lunch lull; lowest liquidity, chop, mean reversion</dd>
+          <dt>14:00</dt><dd>FOMC statement pivot on Fed days</dd>
+          <dt>15:00–16:00</dt><dd>power hour; MOC imbalances, trend resumption</dd>
+          <dt>16:00+</dt><dd>close, then overnight/Globe session with thinner liquidity</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Global Sessions</h3><span class="origin"><span class="label">Topics</span><span class="value">Asia · London open · London/NY overlap · Pre-market</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Asia (Tokyo)</dt><dd>overnight range and risk tone</dd>
+          <dt>London open ~03:00</dt><dd>volatility spike; London breakout</dd>
+          <dt>London/NY overlap ~08:00–11:00</dt><dd>peak FX and cross-asset liquidity</dd>
+          <dt>Pre-market 04:00–09:30</dt><dd>sets reference levels for the cash open</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Day-of-Week</h3><span class="origin"><span class="label">Topics</span><span class="value">Monday · Turnaround Tuesday · Friday · OpEx</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Monday / weekend effect</dt><dd>gap risk from weekend news accumulation</dd>
+          <dt>Turnaround Tuesday</dt><dd>tendency to reverse Monday's move</dd>
+          <dt>Friday tendencies</dt><dd>trend/position-squaring; month-start/month-end Fridays skew to trend days</dd>
+          <dt>OpEx Fridays</dt><dd>monthly options expiration; triple/quad witching quarterly</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Calendar / Seasonal</h3><span class="origin"><span class="label">Topics</span><span class="value">Turn of month · Rebalancing · FOMC drift · Earnings · Seasonal · 0DTE</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Turn-of-the-month</dt><dd>flow-driven strength around month boundaries</dd>
+          <dt>Month/quarter-end rebalancing &amp; window dressing</dt><dd>systematic and cosmetic repositioning</dd>
+          <dt>FOMC drift</dt><dd>pre-announcement drift and post-statement volatility</dd>
+          <dt>Earnings-season clustering</dt><dd>elevated single-name and index dispersion</dd>
+          <dt>Seasonal effects</dt><dd>Santa Claus rally, January effect, 'sell in May,' summer doldrums, pre-holiday drift</dd>
+          <dt>Daily expirations</dt><dd>0DTE SPX/SPY now expire every weekday, reshaping late-day gamma dynamics</dd>
+        </dl>
+      </div>
+    </article>
+
+  </div>
+
+  <h2 id="intermarket">Cross-Sectional &amp; Intermarket Patterns</h2>
+  <div class="rows">
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Intermarket Correlations</h3><span class="origin"><span class="label">Topics</span><span class="value">Bonds · USD · Oil · Gold · VIX · Yields · Copper &amp; crypto</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Bonds vs. equities</dt><dd>risk-on/risk-off allocation shifts</dd>
+          <dt>USD (DXY) vs. commodities</dt><dd>broadly inverse</dd>
+          <dt>Oil vs. equities / transports</dt><dd>energy input and demand signal (correlation is regime-dependent, can decouple)</dd>
+          <dt>Gold vs. real yields</dt><dd>inverse relationship</dd>
+          <dt>VIX vs. SPX</dt><dd>inverse; watch volatility term structure (contango/backwardation)</dd>
+          <dt>Yields vs. growth/tech</dt><dd>long-duration equities sensitive to rate moves</dd>
+          <dt>Copper ('Dr. Copper') &amp; crypto</dt><dd>global-growth and risk-appetite proxies</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Yield Curve / Rates</h3><span class="origin"><span class="label">Topics</span><span class="value">2s10s · Inversion · Credit spreads</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>2s10s spread</dt><dd>steepening, flattening, and inversion regimes</dd>
+          <dt>Curve inversion</dt><dd>classic recession lead signal</dd>
+          <dt>Credit spreads (HY/IG)</dt><dd>risk-stress gauge confirming or diverging from equities</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Sector Rotation</h3><span class="origin"><span class="label">Topics</span><span class="value">Business cycle · Risk-on / defensive · Growth / value · Lead-lag</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Business-cycle rotation loop</dt><dd>early → mid → late → recession leadership rotation</dd>
+          <dt>Risk-on vs. defensive</dt><dd>cyclicals vs. staples/utilities positioning</dd>
+          <dt>Growth vs. value rotation</dt><dd>style leadership shifts with rates and cycle</dd>
+          <dt>Lead-lag confirmation</dt><dd>semis lead tech; transports confirm industrials (Dow Theory)</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Cross-Sectional Equity</h3><span class="origin"><span class="label">Topics</span><span class="value">Factors · Breadth · Relative strength · Dispersion</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Factor premia</dt><dd>momentum, value, size, quality, low-volatility</dd>
+          <dt>Breadth divergences</dt><dd>advance/decline line, new highs vs. new lows</dd>
+          <dt>Relative strength / pairs</dt><dd>sector and single-name spread trades</dd>
+          <dt>Dispersion</dt><dd>index volatility vs. constituent volatility</dd>
+        </dl>
+      </div>
+    </article>
+
+  </div>
+
+  <h2 id="formations">Structural Technical Formations</h2>
+  <div class="rows">
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Ranges &amp; Continuations</h3><span class="origin"><span class="label">Topics</span><span class="value">Ranges · Channels · Triangles · Wedges · Flags · Compression</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Rectangle / trading range</dt><dd>horizontal consolidation between S/R</dd>
+          <dt>Channels</dt><dd>ascending, descending, horizontal</dd>
+          <dt>Triangles</dt><dd>symmetrical, ascending, descending</dd>
+          <dt>Wedges</dt><dd>rising and falling (often reversal)</dd>
+          <dt>Flags &amp; pennants</dt><dd>short continuation pauses after an impulse</dd>
+          <dt>Compression → expansion</dt><dd>inside bars, NR7, coils resolving into a directional move</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Reversal Formations</h3><span class="origin"><span class="label">Topics</span><span class="value">Double / triple · Head &amp; shoulders · Rounding · V-reversal · Island</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Double / triple top &amp; bottom</dt><dd>failure to make new extremes</dd>
+          <dt>Head-and-shoulders / inverse</dt><dd>classic distribution/accumulation reversal</dd>
+          <dt>Rounding top/bottom</dt><dd>gradual sentiment shift</dd>
+          <dt>V-reversal / spike</dt><dd>sharp climactic turn</dd>
+          <dt>Island reversal</dt><dd>gap-isolated cluster signaling exhaustion</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Auction Market / Market Profile Shapes</h3><span class="origin"><span class="label">Topics</span><span class="value">Day types · Value area / POC · Excess · Balance / imbalance</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Day types</dt><dd>normal (bell), trend (elongated), double-distribution, neutral</dd>
+          <dt>Profile references</dt><dd>initial balance, value area (VAH/VAL), point of control (POC)</dd>
+          <dt>Excess &amp; anomalies</dt><dd>single prints, poor highs/lows, tails/excess</dd>
+          <dt>Balance vs. imbalance</dt><dd>acceptance vs. rejection of price/value</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Accumulation / Distribution (Wyckoff)</h3><span class="origin"><span class="label">Topics</span><span class="value">Accumulation · Distribution · Springs / upthrusts · Effort vs. result</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Accumulation schematic</dt><dd>PS, SC, AR, ST, spring, sign of strength</dd>
+          <dt>Distribution schematic</dt><dd>BC, AR, UT, UTAD, sign of weakness</dd>
+          <dt>Springs / upthrusts &amp; tests</dt><dd>false breaks preceding the real move</dd>
+          <dt>Effort vs. result</dt><dd>volume/price divergence flags absorption or exhaustion</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>Levels, Gaps &amp; Volume Structure</h3><span class="origin"><span class="label">Topics</span><span class="value">S/R zones · Trendlines / MAs · Round numbers · Gaps · Breakouts</span></span></div>
+      <div class="more">
+        <dl class="tl-list">
+          <dt>Support/resistance &amp; supply/demand zones</dt><dd>reaction levels and order-cluster zones</dd>
+          <dt>Trendlines &amp; moving-average dynamic S/R</dt><dd>sloping and adaptive reference</dd>
+          <dt>Round-number magnets</dt><dd>psychological 00 and 000 levels</dd>
+          <dt>Gap taxonomy</dt><dd>common, breakaway, runaway/measuring, exhaustion, island</dd>
+          <dt>Breakout vs. false breakout (fakeout)</dt><dd>confirmation vs. trap; volume climax / blow-off</dd>
+        </dl>
+      </div>
+    </article>
+
+  </div>
+
+  <footer>
+    Source: JCR research (General_Market_Patterns.docx). Created 2026-10-19.
+  </footer>
+
+</div>
+</body>
+</html>
