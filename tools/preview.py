@@ -5,14 +5,14 @@ home page in the default browser. Unlike a plain Windows file server, it rejects
 links whose upper/lowercase does not match the actual file, exactly like GitHub.
 Pages are never cached, so a normal refresh shows your latest edits.
 
-Default (the MARKET INFO shortcut): no window. The server runs hidden and stops by
+Default (the MARKET INFO L shortcut): no window. The server runs hidden and stops by
 itself after preview_idle_minutes (config.json) without any page request. If the
 preview is already running, the browser is simply opened on it again.
 
 With --window: a small control window shows the address and offers
 OPEN SITE / CHECK SITE / EXIT. Closing the window (or Esc) stops the server.
 
-Usage:  .venv\\Scripts\\pythonw.exe main.py            (or the MARKET INFO shortcut)
+Usage:  .venv\\Scripts\\pythonw.exe main.py            (or the MARKET INFO L shortcut)
         .venv\\Scripts\\pythonw.exe main.py --window   (control window)
 """
 
