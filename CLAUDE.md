@@ -39,7 +39,7 @@ The `kb_` file prefix is kept from the Knowledge Bank so both sites share identi
 - Dependencies (requirements.txt, pinned): pytest, pillow. The website itself needs no Python.
 
 ## Commands (run from the project folder)
-- Preview site (GitHub-like local server + control window): `.venv\Scripts\pythonw.exe main.py` or the `MARKET INFO.lnk` shortcut (also in `PYTHON_PROJECTS PYTHON APPS SHORTCUP`; git-ignored)
+- Preview site (GitHub-like local server + control window): `.venv\Scripts\pythonw.exe main.py` or the `MARKET INFO.lnk` shortcut (also in `PYTHON_PROJECTS\1 PYTHON APPS SHORTCUP`; git-ignored)
 - New page: `.venv\Scripts\python.exe -m tools.new_page --title "Name" --description "One line"`
 - Check site (links, images, upper/lowercase, arrow, listing): `.venv\Scripts\python.exe -m tools.site_check`
 - Tests: `.venv\Scripts\python.exe -m pytest`
