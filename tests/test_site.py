@@ -13,7 +13,7 @@ def test_site_has_no_problems() -> None:
 
 def test_home_page_lists_volume_info() -> None:
     entries = parse_page(PROJECT_DIR / "index.html").entries
-    assert ("Volume Info", "Volume_Info.html") in entries
+    assert ("Volume Info", "html_pages/Volume_Info.html") in entries
 
 
 def test_development_folders_are_not_pages() -> None:

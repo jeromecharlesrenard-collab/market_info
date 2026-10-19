@@ -5,13 +5,13 @@ Static website of market reference pages, published with GitHub Pages. It is a d
 - Live site: https://jeromecharlesrenard-collab.github.io/market_info/
 - Repo: https://github.com/jeromecharlesrenard-collab/market_info (branch `main`, remote `origin`)
 
-`index.html` is the home page ("MARKET INFO") with an alphabetical list of pages. Each page (e.g. `Volume_Info.html`) sits in the project root.
+`index.html` is the home page ("MARKET INFO") with an alphabetical list of pages. Every other page sits in `html_pages/` (e.g. `html_pages/Volume_Info.html`) and reaches shared files with `../` (see Conventions).
 
 ## Folder Structure
 ```
 market_info/
 ├── index.html               home page (alphabetical list; sorted/grouped by assets/kb_common.js)
-├── Volume_Info.html         first page: "SPY Volume" box (SPY average volume table)
+├── html_pages/              ALL pages except index.html (Volume_Info.html: "SPY Volume" box); links use ../
 ├── kb_images/               ALL page images (create when the first image is added), named <page>_<item>.png
 ├── kb_config.js             page settings: return arrow size (%), top/left margins (pt)
 ├── assets/
@@ -47,14 +47,14 @@ The `kb_` file prefix is kept from the Knowledge Bank so both sites share identi
 - Publish: commit and push to `origin main`; GitHub Pages updates in 1-2 minutes
 
 ## Conventions
-- **Every page uses the shared style**: link `assets/kb_style.css`, `kb_config.js`, `assets/kb_common.js` in `<head>`; return arrow `<a class="return-arrow" href="index.html">` right after `<body>`. Do not put `<style>` blocks in pages; add shared classes to kb_style.css.
+- **Every page uses the shared style**: pages live in `html_pages/` and link `../assets/kb_style.css`, `../kb_config.js`, `../assets/kb_common.js` in `<head>`; return arrow `<a class="return-arrow" href="../index.html">` right after `<body>`; images `../kb_images/...`; home page entries link `html_pages/<Page>.html`. Only index.html stays in the root (GitHub Pages home page). The site check reports any page outside `html_pages/`. Do not put `<style>` blocks in pages; add shared classes to kb_style.css.
 - White background, black Arial text, bold where needed; cards, stat boxes, striped tables.
 - **No round numbering badges** on cards or boxes.
 - **Boxed sections** ("title boxes"): `<article class="card row-card title-box">` with a one-line `<div class="title-line"><h3>Title</h3></div>` and all content in `<div class="more">`, shown with the expand button (see Volume_Info.html "SPY Volume").
 - Long lists of items: full-width row cards (`.rows` / `.row-card`): one header line, max 2 text lines, extra details in `<div class="more">`.
 - **Top arrow** and **Expand all** button are added automatically by kb_common.js.
 - Home page entries: name on top, description + "Added" date on one line.
-- Create new pages with `tools/new_page.py` (adds the home page entry automatically).
+- Create new pages with `tools/new_page.py` (creates them in `html_pages/` and adds the home page entry automatically).
 - **All page images go in `kb_images/`** (published), lowercase page prefix. Source files go in `data/` (never published; pages must not link to it). File and folder names are case-sensitive on GitHub.
 - Market data times are in EDT. American spelling. Python: PEP 8, type hints, docstrings, pathlib.
 - After every change, run the site check and tests, then commit and push to `origin main`. Do not start the preview window without the user's authorization.
