@@ -39,8 +39,10 @@ The `kb_` file prefix is kept from the Knowledge Bank so both sites share identi
 - Dependencies (requirements.txt, pinned): pytest, pillow. The website itself needs no Python.
 
 ## Commands (run from the project folder)
-- Preview site locally (GitHub-like server, no window): the `MARKET INFO.lnk` shortcut (also in `PYTHON_PROJECTS\1 PYTHON APPS SHORTCUP`; git-ignored) or `.venv\Scripts\pythonw.exe main.py`. Opens the home page in the browser; the hidden server stops by itself after `preview_idle_minutes` (config.json, default 60) without page requests. Launching again while it runs just reopens the browser.
-- Preview control window (OPEN SITE / CHECK SITE / EXIT): `.venv\Scripts\pythonw.exe main.py --window`, or VS Code task "KB: Preview window"
+- Shortcuts (in the project folder and in `PYTHON_PROJECTS\1 PYTHON APPS SHORTCUP`; git-ignored, *.lnk):
+  - `MARKET INFO L.lnk`: open the site locally, no window (GitHub-like server; it stops by itself after `preview_idle_minutes` in config.json, default 60, without page requests; launching again while it runs just reopens the browser). Same as `.venv\Scripts\pythonw.exe main.py`.
+  - `MARKET INFO W.lnk`: open the live website.
+  - `MARKET INFO PREVIEW.lnk`: control window (OPEN SITE / CHECK SITE / EXIT), same as `main.py --window` or VS Code task "KB: Preview window".
 - New page: `.venv\Scripts\python.exe -m tools.new_page --title "Name" --description "One line"`
 - Check site (links, images, upper/lowercase, arrow, listing): `.venv\Scripts\python.exe -m tools.site_check`
 - Tests: `.venv\Scripts\python.exe -m pytest`
