@@ -20,6 +20,7 @@ ERROR_LOG: Path = PROJECT_DIR / "error_log.txt"
 DEFAULT_CONFIG: dict[str, Any] = {
     "log_level": "INFO",
     "preview_port": 8000,
+    "preview_idle_minutes": 60,
     "site_url": "https://jeromecharlesrenard-collab.github.io/market_info/",
     "repo_url": "https://github.com/jeromecharlesrenard-collab/market_info",
     "default_source": "JCR research",

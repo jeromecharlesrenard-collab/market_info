@@ -19,7 +19,7 @@ market_info/
 │   ├── kb_common.js         applies kb_config.js, sorts the home page list, expand buttons
 │   ├── return_arrow.svg     top-left return icon
 │   ├── top_arrow.svg        top-right "back to top" icon
-│   └── market_info.ico/.png icon for the preview window / browser tab
+│   └── market_info.ico/.png "MI" icon (shortcut, preview window, browser tab)
 ├── templates/page_template.html   starting point for new pages
 ├── main.py                  entry point: logging + config + local preview window
 ├── tools/                   kb_core.py (paths, config, logging), new_page.py, site_check.py, preview.py
@@ -27,7 +27,7 @@ market_info/
 ├── docs/market_info NOTES.md
 ├── data/                    private source documents (git-ignored, never published), e.g. SPY Average Volume.docx
 ├── logs/app.log             rotating log (git-ignored)
-├── config.json              tool settings: log_level, preview_port, site_url, repo_url, default_source
+├── config.json              tool settings: log_level, preview_port, preview_idle_minutes, site_url, repo_url, default_source
 ├── requirements.txt         pinned dev dependencies
 ├── pytest.ini, .editorconfig, .gitignore, .gitattributes, .nojekyll
 └── .vscode/                 settings, recommended extensions, tasks
@@ -39,11 +39,12 @@ The `kb_` file prefix is kept from the Knowledge Bank so both sites share identi
 - Dependencies (requirements.txt, pinned): pytest, pillow. The website itself needs no Python.
 
 ## Commands (run from the project folder)
-- Preview site (GitHub-like local server + control window): `.venv\Scripts\pythonw.exe main.py` or the `MARKET INFO.lnk` shortcut (also in `PYTHON_PROJECTS\1 PYTHON APPS SHORTCUP`; git-ignored)
+- Preview site locally (GitHub-like server, no window): the `MARKET INFO.lnk` shortcut (also in `PYTHON_PROJECTS\1 PYTHON APPS SHORTCUP`; git-ignored) or `.venv\Scripts\pythonw.exe main.py`. Opens the home page in the browser; the hidden server stops by itself after `preview_idle_minutes` (config.json, default 60) without page requests. Launching again while it runs just reopens the browser.
+- Preview control window (OPEN SITE / CHECK SITE / EXIT): `.venv\Scripts\pythonw.exe main.py --window`, or VS Code task "KB: Preview window"
 - New page: `.venv\Scripts\python.exe -m tools.new_page --title "Name" --description "One line"`
 - Check site (links, images, upper/lowercase, arrow, listing): `.venv\Scripts\python.exe -m tools.site_check`
 - Tests: `.venv\Scripts\python.exe -m pytest`
-- VS Code: Terminal > Run Task > "KB: Preview site" / "KB: New page" / "KB: Check site" / "KB: Run tests"
+- VS Code: Terminal > Run Task > "KB: Preview site" / "KB: Preview window" / "KB: New page" / "KB: Check site" / "KB: Run tests"
 - Publish: commit and push to `origin main`; GitHub Pages updates in 1-2 minutes
 
 ## Conventions

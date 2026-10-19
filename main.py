@@ -1,7 +1,7 @@
 """Market Info - entry point.
 
 Sets up logging, loads config.json, and launches the local preview
-(web server + small control window). Runs under pythonw.exe with no console.
+(hidden web server; add --window for the control window). Runs under pythonw.exe with no console.
 """
 
 from __future__ import annotations
@@ -37,7 +37,7 @@ def main() -> None:
     config = start(show_dialog=True)
     log.info("Startup: Market Info preview")
     try:
-        run(config)
+        run(config, window="--window" in sys.argv[1:])
     finally:
         log.info("Shutdown")
 
