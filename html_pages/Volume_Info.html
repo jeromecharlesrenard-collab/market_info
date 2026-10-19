@@ -15,7 +15,7 @@
 
   <header>
     <h1>Volume Info</h1>
-    <p>Trading volume reference: SPY average volume by time of day and candle timeframe (EDT).</p>
+    <p>Trading volume reference: SPY, QQQ, DIA, and IWM average volume by time of day and candle timeframe (EDT).</p>
   </header>
 
   <div class="rows">
@@ -45,10 +45,85 @@
       </div>
     </article>
 
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>QQQ Volume</h3></div>
+      <div class="more">
+        <p class="table-title">QQQ Average Volume (EDT)</p>
+        <div class="table-wrap wrap">
+          <table>
+            <thead>
+              <tr><th>Time (EDT)</th><th>2-min candle</th><th>5-min candle</th><th>15-min candle</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>9:30 – 9:45</td><td class="nowrap">640K – 1.6M+</td><td class="nowrap">1.3 – 2.5M+</td><td class="nowrap">3.2 – 5.1M+</td><td>Front-loaded; not linear</td></tr>
+              <tr><td>9:45 – 10:30</td><td class="nowrap">250 – 510K</td><td class="nowrap">640K – 1.3M</td><td class="nowrap">1.9 – 3.8M</td><td>Opening range activity</td></tr>
+              <tr><td>10:30 – 11:30</td><td class="nowrap">130 – 200K</td><td class="nowrap">320 – 510K</td><td class="nowrap">950K – 1.5M</td><td>Tapering; spikes on data (EIA Wed 10:30)</td></tr>
+              <tr><td>11:30 – 14:00</td><td class="nowrap">76 – 130K</td><td class="nowrap">190 – 320K</td><td class="nowrap">570 – 950K</td><td>Midday lull</td></tr>
+              <tr><td>14:00 – 15:00</td><td class="nowrap">100 – 180K</td><td class="nowrap">250 – 450K</td><td class="nowrap">760K – 1.3M</td><td>FOMC days: 950K – 1.9M+ / 1.9 – 3.8M+ / 5.7 – 9.5M+</td></tr>
+              <tr><td>15:00 – 15:50</td><td class="nowrap">250 – 380K</td><td class="nowrap">640 – 950K</td><td class="nowrap">1.9 – 2.9M</td><td>Final-hour positioning</td></tr>
+              <tr><td>15:50 – 16:00</td><td class="nowrap">640K – 1.6M+</td><td class="nowrap">1.3 – 3.2M+</td><td class="nowrap">3.8 – 6.4M+</td><td>MOC imbalance; front-loaded at the bell</td></tr>
+              <tr><td>Full session avg</td><td class="nowrap"><strong>179,487</strong></td><td class="nowrap"><strong>448,718</strong></td><td class="nowrap"><strong>1,346,154</strong></td><td>ADV ÷ 195 / 78 / 26 candles</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Avg daily volume (shares) as of 2026-10-16: <strong>35,000,000</strong>. Time-of-day ranges are estimates: the SPY profile scaled by average daily volume.</p>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>DIA Volume</h3></div>
+      <div class="more">
+        <p class="table-title">DIA Average Volume (EDT)</p>
+        <div class="table-wrap wrap">
+          <table>
+            <thead>
+              <tr><th>Time (EDT)</th><th>2-min candle</th><th>5-min candle</th><th>15-min candle</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>9:30 – 9:45</td><td class="nowrap">64 – 160K+</td><td class="nowrap">130 – 250K+</td><td class="nowrap">320 – 510K+</td><td>Front-loaded; not linear</td></tr>
+              <tr><td>9:45 – 10:30</td><td class="nowrap">25 – 51K</td><td class="nowrap">64 – 130K</td><td class="nowrap">190 – 380K</td><td>Opening range activity</td></tr>
+              <tr><td>10:30 – 11:30</td><td class="nowrap">13 – 20K</td><td class="nowrap">32 – 51K</td><td class="nowrap">95 – 150K</td><td>Tapering; spikes on data (EIA Wed 10:30)</td></tr>
+              <tr><td>11:30 – 14:00</td><td class="nowrap">7.6 – 13K</td><td class="nowrap">19 – 32K</td><td class="nowrap">57 – 95K</td><td>Midday lull</td></tr>
+              <tr><td>14:00 – 15:00</td><td class="nowrap">10 – 18K</td><td class="nowrap">25 – 45K</td><td class="nowrap">76 – 130K</td><td>FOMC days: 95 – 190K+ / 190 – 380K+ / 570 – 950K+</td></tr>
+              <tr><td>15:00 – 15:50</td><td class="nowrap">25 – 38K</td><td class="nowrap">64 – 95K</td><td class="nowrap">190 – 290K</td><td>Final-hour positioning</td></tr>
+              <tr><td>15:50 – 16:00</td><td class="nowrap">64 – 160K+</td><td class="nowrap">130 – 320K+</td><td class="nowrap">380 – 640K+</td><td>MOC imbalance; front-loaded at the bell</td></tr>
+              <tr><td>Full session avg</td><td class="nowrap"><strong>17,949</strong></td><td class="nowrap"><strong>44,872</strong></td><td class="nowrap"><strong>134,615</strong></td><td>ADV ÷ 195 / 78 / 26 candles</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Avg daily volume (shares) as of 2026-10-16: <strong>3,500,000</strong>. Time-of-day ranges are estimates: the SPY profile scaled by average daily volume.</p>
+      </div>
+    </article>
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>IWM Volume</h3></div>
+      <div class="more">
+        <p class="table-title">IWM Average Volume (EDT)</p>
+        <div class="table-wrap wrap">
+          <table>
+            <thead>
+              <tr><th>Time (EDT)</th><th>2-min candle</th><th>5-min candle</th><th>15-min candle</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>9:30 – 9:45</td><td class="nowrap">450K – 1.1M+</td><td class="nowrap">910K – 1.8M+</td><td class="nowrap">2.3 – 3.6M+</td><td>Front-loaded; not linear</td></tr>
+              <tr><td>9:45 – 10:30</td><td class="nowrap">180 – 360K</td><td class="nowrap">450 – 910K</td><td class="nowrap">1.4 – 2.7M</td><td>Opening range activity</td></tr>
+              <tr><td>10:30 – 11:30</td><td class="nowrap">91 – 150K</td><td class="nowrap">230 – 360K</td><td class="nowrap">680K – 1.1M</td><td>Tapering; spikes on data (EIA Wed 10:30)</td></tr>
+              <tr><td>11:30 – 14:00</td><td class="nowrap">55 – 91K</td><td class="nowrap">140 – 230K</td><td class="nowrap">410 – 680K</td><td>Midday lull</td></tr>
+              <tr><td>14:00 – 15:00</td><td class="nowrap">73 – 130K</td><td class="nowrap">180 – 320K</td><td class="nowrap">550 – 950K</td><td>FOMC days: 680K – 1.4M+ / 1.4 – 2.7M+ / 4.1 – 6.8M+</td></tr>
+              <tr><td>15:00 – 15:50</td><td class="nowrap">180 – 270K</td><td class="nowrap">450 – 680K</td><td class="nowrap">1.4 – 2M</td><td>Final-hour positioning</td></tr>
+              <tr><td>15:50 – 16:00</td><td class="nowrap">450K – 1.1M+</td><td class="nowrap">910K – 2.3M+</td><td class="nowrap">2.7 – 4.5M+</td><td>MOC imbalance; front-loaded at the bell</td></tr>
+              <tr><td>Full session avg</td><td class="nowrap"><strong>128,205</strong></td><td class="nowrap"><strong>320,513</strong></td><td class="nowrap"><strong>961,538</strong></td><td>ADV ÷ 195 / 78 / 26 candles</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Avg daily volume (shares) as of 2026-10-16: <strong>25,000,000</strong>. Time-of-day ranges are estimates: the SPY profile scaled by average daily volume.</p>
+      </div>
+    </article>
+
   </div>
 
   <footer>
-    Source: JCR research (SPY Average Volume.docx). Created 2026-10-19.
+    Source: JCR research (SPY Average Volume.docx); QQQ, DIA, and IWM average daily volume from iShares, MarketChameleon, CNBC, Schwab, and Yahoo Finance (30-day / 3-month averages, as of 2026-10-16). Created 2026-10-19.
   </footer>
 
 </div>
