@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume Info</title>
+<link rel="icon" type="image/png" href="assets/market_info.png">
+<link rel="stylesheet" href="assets/kb_style.css">
+<script src="kb_config.js"></script>
+<script src="assets/kb_common.js"></script>
+</head>
+<body>
+<a class="return-arrow" href="index.html" title="Back to Market Info" aria-label="Back to Market Info"><img src="assets/return_arrow.svg" alt=""></a>
+<div class="page">
+
+  <header>
+    <h1>Volume Info</h1>
+    <p>Trading volume reference: SPY average volume by time of day and candle timeframe (EDT).</p>
+  </header>
+
+  <div class="rows">
+
+    <article class="card row-card title-box">
+      <div class="title-line"><h3>SPY Volume</h3></div>
+      <div class="more">
+        <p class="table-title">SPY Average Volume (EDT)</p>
+        <div class="table-wrap wrap">
+          <table>
+            <thead>
+              <tr><th>Time (EDT)</th><th>2-min candle</th><th>5-min candle</th><th>15-min candle</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>9:30 – 9:45</td><td class="nowrap">1 – 2.5M+</td><td class="nowrap">2 – 4M+</td><td class="nowrap">5 – 8M+</td><td>Front-loaded; not linear</td></tr>
+              <tr><td>9:45 – 10:30</td><td class="nowrap">400 – 800K</td><td class="nowrap">1 – 2M</td><td class="nowrap">3 – 6M</td><td>Opening range activity</td></tr>
+              <tr><td>10:30 – 11:30</td><td class="nowrap">200 – 320K</td><td class="nowrap">500 – 800K</td><td class="nowrap">1.5 – 2.4M</td><td>Tapering; spikes on data (EIA Wed 10:30)</td></tr>
+              <tr><td>11:30 – 14:00</td><td class="nowrap">120 – 200K</td><td class="nowrap">300 – 500K</td><td class="nowrap">0.9 – 1.5M</td><td>Midday lull</td></tr>
+              <tr><td>14:00 – 15:00</td><td class="nowrap">160 – 280K</td><td class="nowrap">400 – 700K</td><td class="nowrap">1.2 – 2.1M</td><td>FOMC days: 1.5 – 3M+ / 3 – 6M+ / 9 – 15M+</td></tr>
+              <tr><td>15:00 – 15:50</td><td class="nowrap">400 – 600K</td><td class="nowrap">1 – 1.5M</td><td class="nowrap">3 – 4.5M</td><td>Final-hour positioning</td></tr>
+              <tr><td>15:50 – 16:00</td><td class="nowrap">1 – 2.5M+</td><td class="nowrap">2 – 5M+</td><td class="nowrap">6 – 10M+</td><td>MOC imbalance; front-loaded at the bell</td></tr>
+              <tr><td>Full session avg</td><td class="nowrap"><strong>282,051</strong></td><td class="nowrap"><strong>705,128</strong></td><td class="nowrap"><strong>2,115,385</strong></td><td>ADV ÷ 195 / 78 / 26 candles</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Avg daily volume (shares) as of 2026-10-19: <strong>55,000,000</strong></p>
+      </div>
+    </article>
+
+  </div>
+
+  <footer>
+    Source: JCR research (SPY Average Volume.docx). Created 2026-10-19.
+  </footer>
+
+</div>
+</body>
+</html>
