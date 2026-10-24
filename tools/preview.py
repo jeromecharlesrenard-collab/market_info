@@ -126,7 +126,7 @@ class PreviewWindow:
 
         root.title("market_info")
         root.configure(bg="white")
-        icon = PROJECT_DIR / "assets" / "market_info.ico"
+        icon = PROJECT_DIR / "assets" / "market_info_mi.ico"
         if icon.exists():
             root.iconbitmap(str(icon))
         width, height = 560, 300

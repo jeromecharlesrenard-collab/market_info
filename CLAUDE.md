@@ -19,7 +19,8 @@ market_info/
 │   ├── kb_common.js         applies kb_config.js, sorts the home page list, expand buttons
 │   ├── return_arrow.svg     top-left return icon
 │   ├── top_arrow.svg        top-right "back to top" icon
-│   └── market_info.ico/.png "MI" icon (shortcut, preview window, browser tab)
+│   ├── market_info_mi.ico   "MI" icon (shortcuts, preview window)
+│   └── market_info.png      "MI" icon (browser tab)
 ├── templates/page_template.html   starting point for new pages
 ├── main.py                  entry point: logging + config + local preview window
 ├── tools/                   kb_core.py (paths, config, logging), new_page.py, site_check.py, preview.py
