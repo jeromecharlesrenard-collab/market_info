@@ -209,6 +209,121 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Bookmarks: every section heading (<h2>) and every box or row card gets an address
+// (page.html#name). An id already in the page is kept; otherwise one is made from the title,
+// e.g. "3-Axis vs. 5-Axis Machining" -> #3-axis-vs-5-axis-machining. A link icon next to each
+// title copies the full address. Opening an address with #name expands that box and scrolls to it.
+(function () {
+  var LINK_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1.2-1.2a2.8 2.8 0 0 1 ' +
+    '4 4L11 8.5M9 11.5l-1.2 1.2a2.8 2.8 0 0 1-4-4L5 7.5" fill="none" stroke="currentColor" stroke-width="1.6" ' +
+    'stroke-linecap="round"/></svg>';
+
+  function slug(text) {
+    return text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+      .replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'section';
+  }
+
+  function titleText(heading) {
+    var copy = heading.cloneNode(true);
+    Array.prototype.forEach.call(copy.querySelectorAll('button, .anchor-link'), function (n) { n.remove(); });
+    return copy.textContent.replace(/\s+/g, ' ').trim();
+  }
+
+  function toast(text) {
+    var old = document.querySelector('.anchor-toast');
+    if (old) { old.remove(); }
+    var t = document.createElement('div');
+    t.className = 'anchor-toast';
+    t.textContent = text;
+    document.body.appendChild(t);
+    setTimeout(function () { t.remove(); }, 1800);
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) { return navigator.clipboard.writeText(text); }
+    return new Promise(function (resolve, reject) {
+      var area = document.createElement('textarea');
+      area.value = text;
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      area.remove();
+      if (ok) { resolve(); } else { reject(new Error('copy failed')); }
+    });
+  }
+
+  // Section headings: the icon follows the title. Boxes: it sits top right, next to the expand
+  // button, so it never cuts off a title.
+  function addLink(holder, id) {
+    if (holder.querySelector(':scope > .anchor-link')) { return; }
+    var a = document.createElement('a');
+    a.className = 'anchor-link' + (holder.classList.contains('row-card') ? ' card-link' : '');
+    a.href = '#' + id;
+    a.title = 'Copy the link to this section';
+    a.setAttribute('aria-label', 'Copy the link to this section');
+    a.innerHTML = LINK_ICON;
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation(); // do not open or close the box itself
+      var url = window.location.href.split('#')[0].replace(/[?&](q|b)=[^&]*/g, '').replace(/\?$/, '') + '#' + id;
+      if (window.history.replaceState) { window.history.replaceState(null, '', '#' + id); }
+      copyText(url).then(function () { toast('Link copied'); }, function () { toast(url); });
+    });
+    holder.appendChild(a);
+  }
+
+  function assignIds() {
+    var root = document.querySelector('.page') || document.body;
+    var used = {};
+    Array.prototype.forEach.call(document.querySelectorAll('[id]'), function (el) { used[el.id] = true; });
+    function idFor(el, heading) {
+      if (el.id) { return el.id; }
+      var base = slug(titleText(heading)), id = base, n = 2;
+      while (used[id]) { id = base + '-' + n++; }
+      used[id] = true;
+      el.id = id;
+      return id;
+    }
+    Array.prototype.forEach.call(root.querySelectorAll('h2'), function (h2) {
+      if (h2.classList.contains('letter') || h2.closest('header')) { return; }
+      addLink(h2, idFor(h2, h2));
+    });
+    Array.prototype.forEach.call(root.querySelectorAll('.row-card'), function (card) {
+      var h3 = card.querySelector('h3');
+      if (h3) { addLink(card, idFor(card, h3)); }
+    });
+  }
+
+  // Open the box named in the address (and the box around it), then scroll to it.
+  function goToHash(onLoad) {
+    var id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) { return; }
+    var target = document.getElementById(id);
+    if (!target) { return; }
+    var card = target.closest('.row-card');
+    if (card && !card.classList.contains('expanded')) {
+      var btn = card.querySelector('.expand-btn');
+      if (btn && !btn.hidden) { btn.click(); } else { card.classList.add('expanded'); }
+    }
+    if (onLoad === true) {
+      // Opening the address: jump straight there (again shortly after, once late images have sized).
+      target.scrollIntoView({ block: 'start', behavior: 'instant' });
+      setTimeout(function () { target.scrollIntoView({ block: 'start', behavior: 'instant' }); }, 300);
+    } else {
+      target.scrollIntoView({ block: 'start' });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', assignIds);
+  window.addEventListener('load', function () {
+    if (!new URLSearchParams(window.location.search).get('q')) { goToHash(true); }
+  });
+  window.addEventListener('hashchange', function () { goToHash(false); });
+})();
+
 // Home page: sort index entries alphabetically and group them under letter headings.
 document.addEventListener('DOMContentLoaded', function () {
   var source = document.getElementById('entries');
